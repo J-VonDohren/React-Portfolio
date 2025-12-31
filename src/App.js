@@ -283,14 +283,20 @@ function App() {
                 {
                   title: "AWS Certified Cloud Practitioner (CLF-C02)",
                   issuer: "Amazon Web Services",
-                  date: "Planned 2026",
+                  date: "Planned Early 2026",
                   badgeSrc: `${publicUrl}/certs/AWS_Cloud_Practitioner.png`,
                 },
                 {
                   title: "Microsoft Azure AI Fundamentals (AL-900)",
                   issuer: "Microsoft",
-                  date: "Planned 2026",
+                  date: "Planned Early 2026",
                   badgeSrc: `${publicUrl}/certs/Microsoft_Azure_AI_Fundamentals.png`,
+                },
+                {
+                  title: "NVIDIA Certified Associate Generative AI (NCA-GENL)",
+                  issuer: "NVIDIA",
+                  date: "Planned Mid 2026",
+                  badgeSrc: `${publicUrl}/certs/AWS_Cloud_Practitioner.png`,
                 },
                 {
                   title: "IBM Data Science Professional Certificate",
