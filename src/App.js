@@ -296,7 +296,7 @@ function App() {
                   title: "NVIDIA Certified Associate Generative AI (NCA-GENL)",
                   issuer: "NVIDIA",
                   date: "Planned Mid 2026",
-                  badgeSrc: `${publicUrl}/certs/AWS_Cloud_Practitioner.png`,
+                  badgeSrc: `${publicUrl}/certs/NVIDIA_Gen_AI_LLMs.png`,
                 },
                 {
                   title: "IBM Data Science Professional Certificate",
