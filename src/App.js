@@ -4,6 +4,7 @@ import ResumeAI from "./Components/ResumeAI.js";
 import CertificationsCarousel from "./Components/certificationCarousel.js";
 import { SkillTag, TimelineItem, ProjectCard } from "./Components/components.js";
 
+// when updatign files dont forget to redeploy using "npm run deploy"
 function App() {
   const publicUrl = process.env.PUBLIC_URL;
 
@@ -15,9 +16,10 @@ function App() {
       <div className="h-full text-center bg-[#333333] pb-5">
         <section id="NavBar"></section>
 
+        {/* Landing Page */}
         <section
           id="landingPage"
-          className="scroll-mt-24 min-h-screen bg-gradient-to-b from-slate-900 via-slate-900 to-[#333333] text-amber-400"
+          className="py-5 scroll-mt-24 min-h-screen bg-slate-900 text-amber-400"
         >
           <div className="mx-auto max-w-6xl w-full px-8 min-h-screen flex flex-col md:flex-row items-center">
             {/* LEFT: about me */}
@@ -95,7 +97,7 @@ function App() {
         </section>
 
         {/* Skills */}
-        <section id="skills" className="scroll-mt-24 bg-[#333333] py-16">
+        <section id="skills" className="scroll-mt-24 bg-[#333333] py-20">
           <div className="mx-auto max-w-6xl w-full px-6">
             <h2 className="text-3xl font-bold text-white mb-10">Skills</h2>
 
@@ -106,13 +108,13 @@ function App() {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <SkillTag label="Python" variant="blue" />
-                  <SkillTag label="Java" variant="green" />
-                  <SkillTag label="C++" variant="green" />
-                  <SkillTag label="JavaScript" variant="green" />
-                  <SkillTag label="Node.js" variant="blue" />
-                  <SkillTag label="Tailwind CSS" variant="blue" />
-                  <SkillTag label="React" variant="blue" />
+                  <SkillTag label="Python" />
+                  <SkillTag label="Java" />
+                  <SkillTag label="C++" />
+                  <SkillTag label="JavaScript" />
+                  <SkillTag label="Node.js" />
+                  <SkillTag label="Tailwind CSS" />
+                  <SkillTag label="React" />
                 </div>
               </div>
 
@@ -122,13 +124,13 @@ function App() {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <SkillTag label="AWS (S3, EBS, DynamoDB)" variant="blue" />
-                  <SkillTag label="Docker" variant="blue" />
-                  <SkillTag label="Linux" variant="green" />
-                  <SkillTag label="Git" variant="blue" />
-                  <SkillTag label="Apache Kafka" variant="green" />
-                  <SkillTag label="Apache Airflow" variant="green" />
-                  <SkillTag label="Jira" variant="blue" />
+                  <SkillTag label="AWS (S3, EBS, DynamoDB)" />
+                  <SkillTag label="Docker" />
+                  <SkillTag label="Linux" />
+                  <SkillTag label="Git" />
+                  <SkillTag label="Apache Kafka" />
+                  <SkillTag label="Apache Airflow" />
+                  <SkillTag label="Jira" />
                 </div>
               </div>
 
@@ -138,14 +140,14 @@ function App() {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <SkillTag label="Pandas / NumPy" variant="blue" />
-                  <SkillTag label="Scikit-learn" variant="green" />
-                  <SkillTag label="Tableau" variant="blue" />
-                  <SkillTag label="Power BI" variant="blue" />
-                  <SkillTag label="SQL" variant="blue" />
-                  <SkillTag label="Excel" variant="green" />
-                  <SkillTag label="Google Sheets" variant="green" />
-                  <SkillTag label="Pytorch" variant="green" />
+                  <SkillTag label="Pandas / NumPy" />
+                  <SkillTag label="Scikit-learn" />
+                  <SkillTag label="Tableau" />
+                  <SkillTag label="Power BI" />
+                  <SkillTag label="SQL" />
+                  <SkillTag label="Excel" />
+                  <SkillTag label="Google Sheets" />
+                  <SkillTag label="Pytorch" />
                 </div>
               </div>
 
@@ -157,14 +159,14 @@ function App() {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <SkillTag label="Wireshark" variant="green" />
-                  <SkillTag label="Managed Switching" variant="green" />
-                  <SkillTag label="VPN / Port Forwarding" variant="blue" />
-                  <SkillTag label="RAID / NAS" variant="blue" />
-                  <SkillTag label="Windows / Linux" variant="green" />
-                  <SkillTag label="HTTPS" variant="blue" />
-                  <SkillTag label="Network Isolation" variant="green" />
-                  <SkillTag label="Backup & Recovery Testing" variant="blue" />
+                  <SkillTag label="Wireshark" />
+                  <SkillTag label="Managed Switching" />
+                  <SkillTag label="VPN / Port Forwarding" />
+                  <SkillTag label="RAID / NAS" />
+                  <SkillTag label="Windows / Linux" />
+                  <SkillTag label="HTTPS" />
+                  <SkillTag label="Network Isolation" />
+                  <SkillTag label="Backup & Recovery Testing" />
                 </div>
               </div>
             </div>
@@ -177,6 +179,7 @@ function App() {
             <h2 className="text-3xl font-bold text-white mb-12">Featured Projects</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              
               <div className="md:col-span-2">
                 <ProjectCard
                   size="large"
@@ -243,7 +246,7 @@ function App() {
         </section>
 
         {/* Education */}
-        <section id="education" className="scroll-mt-24">
+        <section id="education" className="scroll-mt-24 bg-[#333333] py-20">
           <div className="mx-auto max-w-6xl px-6">
             <h2 className="text-3xl font-bold text-white mb-12">Education Timeline</h2>
 
@@ -280,7 +283,7 @@ function App() {
 
             <CertificationsCarousel
               items={[
-                {
+                /* {
                   title: "AWS Certified Cloud Practitioner (CLF-C02)",
                   issuer: "Amazon Web Services",
                   date: "Planned Early 2026",
@@ -297,7 +300,7 @@ function App() {
                   issuer: "NVIDIA",
                   date: "Planned Mid 2026",
                   badgeSrc: `${publicUrl}/certs/NVIDIA_Gen_AI_LLMs.png`,
-                },
+                }, */
                 {
                   title: "IBM Data Science Professional Certificate",
                   issuer: "IBM / Coursera",

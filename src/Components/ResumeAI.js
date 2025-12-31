@@ -79,7 +79,7 @@ export default function ResumeAI() {
         onClick={() => setOpen(true)}
         className="fixed right-4 bottom-4 z-50 rounded-full bg-amber-400 px-4 py-2 text-sm font-semibold text-slate-900 shadow-lg hover:bg-amber-300 transition"
       >
-        Ask about Jake
+        Ask about Jake’s skills
       </button>
     );
   }
