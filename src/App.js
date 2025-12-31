@@ -1,8 +1,8 @@
 import "./App.css";
-import Navbar from "./NavBar.js";
-import ResumeAI from "./ResumeAI.js";
-import CertificationsCarousel from "./certificationCarousel.js";
-import { SkillTag, TimelineItem, ProjectCard } from "./components.js";
+import Navbar from "./Components/NavBar.js";
+import ResumeAI from "./Components/ResumeAI.js";
+import CertificationsCarousel from "./Components/certificationCarousel.js";
+import { SkillTag, TimelineItem, ProjectCard } from "./Components/components.js";
 
 function App() {
   const publicUrl = process.env.PUBLIC_URL;
