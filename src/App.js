@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <ResumeAI />
+      <ResumeAI offsetX={20} offsetY={20}/>
 
       <div className="h-full text-center bg-[#333333] pb-5">
         <section id="NavBar"></section>

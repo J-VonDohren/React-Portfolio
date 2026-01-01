@@ -1,17 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 
-export default function ResumeAI() {
+export default function ResumeAI({ offsetX = 16, offsetY = 16 }) {
   const [open, setOpen] = useState(true);
+  const [input, setInput] = useState("");
 
   const [messages, setMessages] = useState([
     {
       role: "assistant",
       content:
-        "Hi! I can help recruiters explore Jake’s skills, projects, and experience. Try: “backend”, “cloud”, or “projects”.",
+        "Hi! I can help recruiters explore Jake’s skills, projects, and experience. Try: backend, frontend, projects, cloud, homelab, or education.",
     },
   ]);
-
-  const [input, setInput] = useState("");
 
   const bottomRef = useRef(null);
 
@@ -22,26 +21,20 @@ export default function ResumeAI() {
   function getResponse(text) {
     const q = text.toLowerCase();
 
-    if (q.includes("backend")) {
-      return "Backend: Jake builds REST APIs with Node.js + Express and focuses on scalable design. Check the Featured Projects section (NewsTube) for evidence.";
-    }
-    if (q.includes("cloud") || q.includes("aws")) {
-      return "Cloud/AWS: Jake has hands-on AWS exposure (e.g., S3/EC2 in projects + homelab experimentation) and uses Docker for deployment workflows.";
-    }
-    if (q.includes("project")) {
-      return "Projects: Featured work includes NewsTube (cloud-backed platform), Homelab infrastructure, and a 2D fighter game with AI behaviour. Scroll to Projects for details.";
-    }
-    if (q.includes("frontend") || q.includes("react") || q.includes("ui")) {
-      return "Frontend: Jake builds responsive, component-based UIs using React and Tailwind CSS, focusing on clean layout, usability, and maintainable structure. This portfolio itself demonstrates his frontend approach and design consistency.";
-    }
-    if (q.includes("homelab") || q.includes("infrastructure") || q.includes("network")) {
-      return "Homelab: Jake maintains a personal homelab used to experiment with Linux servers, networking, storage, and deployment workflows. This environment supports hands-on learning in infrastructure, Docker, networking concepts, and system troubleshooting beyond academic coursework.";
-    }
-    if (q.includes("education") || q.includes("study") || q.includes("university")) {
-      return "Education: Jake is currently studying Computer Science at QUT, building a strong foundation in software engineering, data, and systems. His coursework is complemented by extensive self-directed projects and practical experimentation through his homelab.";
-    }
+    if (q.includes("backend"))
+      return "Backend: Jake builds REST APIs with Node.js + Express, focusing on scalable, maintainable architectures. The NewsTube project is a strong example.";
+    if (q.includes("cloud") || q.includes("aws"))
+      return "Cloud: Jake has hands-on AWS experience (S3, EC2, Docker) across projects and his homelab, focusing on deployment workflows and infrastructure concepts.";
+    if (q.includes("project"))
+      return "Projects: Key work includes NewsTube (cloud-backed platform), a PyTorch-powered fighting game AI, and a documented homelab used for infrastructure experimentation.";
+    if (q.includes("frontend") || q.includes("react") || q.includes("ui"))
+      return "Frontend: Jake builds responsive UIs using React and Tailwind CSS, focusing on clean layout, usability, and consistency — demonstrated directly by this portfolio.";
+    if (q.includes("homelab") || q.includes("infrastructure") || q.includes("network"))
+      return "Homelab: Jake runs a personal homelab to experiment with Linux servers, networking, Docker, storage, and automation — reinforcing real-world systems knowledge.";
+    if (q.includes("education") || q.includes("study") || q.includes("university"))
+      return "Education: Jake is studying Computer Science at QUT, combining formal coursework with extensive self-directed projects and infrastructure experimentation.";
 
-    return "Sorry, I don’t understand — try: backend, frontend, projects, cloud, homelab, or education.";
+    return "Sorry — try backend, frontend, projects, cloud, homelab, or education.";
   }
 
   function handleSend(text) {
@@ -66,9 +59,9 @@ export default function ResumeAI() {
 
   function handlePrompt(type) {
     if (type === "backend") handleSend("Show my backend experience");
-    if (type === "cloud") handleSend("Show my cloud/AWS experience");
-    if (type === "projects") handleSend("What are my best projects?");
     if (type === "frontend") handleSend("Show my frontend experience");
+    if (type === "projects") handleSend("What are my best projects?");
+    if (type === "cloud") handleSend("Show my cloud experience");
     if (type === "homelab") handleSend("Tell me about the homelab");
     if (type === "education") handleSend("Tell me about education");
   }
@@ -77,17 +70,30 @@ export default function ResumeAI() {
     return (
       <button
         onClick={() => setOpen(true)}
-        className="fixed right-4 bottom-4 z-50 rounded-full bg-amber-400 px-4 py-2 text-sm font-semibold text-slate-900 shadow-lg hover:bg-amber-300 transition"
+        style={{ right: offsetX, bottom: offsetY }}
+        className="fixed z-50 rounded-full bg-amber-400 px-4 py-2 text-sm font-semibold text-slate-900 shadow-lg hover:bg-amber-300 transition"
       >
-        Ask about Jake’s skills
+        Ask about my experience
       </button>
     );
   }
 
   return (
-    <div className="fixed right-4 bottom-4 w-80 h-[480px] z-50 bg-slate-900 text-slate-100 rounded-2xl shadow-xl flex flex-col">
-      {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b border-slate-800">
+    <div
+      style={{
+        right: offsetX,
+        bottom: offsetY,
+        width: "clamp(260px, 42vw, 320px)",
+        height: "clamp(280px, 50vh, 480px)", // you can lower min here
+      }}
+      className="
+        fixed z-50 bg-slate-900 text-slate-100 rounded-2xl shadow-xl flex flex-col
+        outline outline-1 outline-amber-400
+        min-h-0
+      "
+    >
+      {/* Header (fixed height) */}
+      <div className="flex items-center justify-between p-4 border-b border-slate-800 flex-shrink-0">
         <h3 className="font-semibold text-sm">Resume Assistant</h3>
         <button
           onClick={() => setOpen(false)}
@@ -98,32 +104,30 @@ export default function ResumeAI() {
         </button>
       </div>
 
-      {/* Quick prompts */}
-      <div className="flex flex-wrap gap-2 p-3 border-b border-slate-800">
+      {/* Quick prompts (fixed height) */}
+      <div className="flex flex-wrap gap-2 p-3 border-b border-slate-800 flex-shrink-0">
         <button
           onClick={() => handlePrompt("backend")}
-          className="text-black rounded-lg bg-amber-400 px-3 py-1 text-xs hover:bg-amber-300 transition"
+          className="rounded-lg bg-amber-400 px-3 py-1 text-xs font-medium text-black hover:bg-amber-300 transition"
         >
           Backend
         </button>
-
         <button
           onClick={() => handlePrompt("frontend")}
-          className="text-black rounded-lg bg-amber-400 px-3 py-1 text-xs hover:bg-amber-300 transition"
+          className="rounded-lg bg-amber-400 px-3 py-1 text-xs font-medium text-black hover:bg-amber-300 transition"
         >
           Frontend
         </button>
-
         <button
           onClick={() => handlePrompt("projects")}
-          className="text-black rounded-lg bg-amber-400 px-3 py-1 text-xs hover:bg-amber-300 transition"
+          className="rounded-lg bg-amber-400 px-3 py-1 text-xs font-medium text-black hover:bg-amber-300 transition"
         >
           Best projects
         </button>
       </div>
 
-      {/* Messages */}
-      <div className="flex-1 p-4 overflow-y-auto space-y-3 text-sm">
+      {/* Messages (this MUST be allowed to shrink) */}
+      <div className="flex-1 min-h-0 p-4 overflow-y-auto space-y-3 text-sm">
         {messages.map((m, i) => (
           <div
             key={i}
@@ -136,12 +140,11 @@ export default function ResumeAI() {
             {m.content}
           </div>
         ))}
-
         <div ref={bottomRef} />
       </div>
 
-      {/* Input */}
-      <form onSubmit={handleSubmit} className="p-3 border-t border-slate-800">
+      {/* Input (fixed height) */}
+      <form onSubmit={handleSubmit} className="p-3 border-t border-slate-800 flex-shrink-0">
         <div className="flex gap-2">
           <input
             value={input}
