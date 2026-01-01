@@ -4,22 +4,22 @@ import ResumeAI from "./Components/ResumeAI.js";
 import CertificationsCarousel from "./Components/certificationCarousel.js";
 import { SkillTag, TimelineItem, ProjectCard } from "./Components/components.js";
 
-// when updatign files dont forget to redeploy using "npm run deploy"
+// when updating files dont forget to redeploy using "npm run deploy"
 function App() {
   const publicUrl = process.env.PUBLIC_URL;
 
   return (
     <>
       <Navbar />
-      <ResumeAI offsetX={20} offsetY={20}/>
+      <ResumeAI offsetX={20} offsetY={20} />
 
-      <div className="h-full text-center bg-[#333333] pb-5">
+      <div className="pt-[var(--nav-h)] h-full text-center bg-slate-900 pb-5">
         <section id="NavBar"></section>
 
         {/* Landing Page */}
         <section
           id="landingPage"
-          className="py-5 scroll-mt-24 min-h-screen bg-slate-900 text-amber-400"
+          className="scroll-mt-24 min-h-screen bg-slate-900 text-amber-400"
         >
           <div className="mx-auto max-w-6xl w-full px-8 min-h-screen flex flex-col md:flex-row items-center">
             {/* LEFT: about me */}
@@ -179,7 +179,6 @@ function App() {
             <h2 className="text-3xl font-bold text-white mb-12">Featured Projects</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              
               <div className="md:col-span-2">
                 <ProjectCard
                   size="large"
