@@ -46,7 +46,7 @@ function CertificationsCarousel({ items }) {
             onClick={() => scrollByCards(-1)}
             className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-10
                        h-10 w-10 items-center justify-center rounded-full
-                       bg-slate-900/90 text-amber-400 shadow-lg hover:bg-slate-900"
+                       bg-slate-900 text-amber-400 shadow-lg hover:bg-slate-900"
             aria-label="Scroll certifications left"
           >
             ‹
@@ -57,7 +57,7 @@ function CertificationsCarousel({ items }) {
             onClick={() => scrollByCards(1)}
             className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-10
                        h-10 w-10 items-center justify-center rounded-full
-                       bg-slate-900/90 text-amber-400 shadow-lg hover:bg-slate-900"
+                       bg-slate-900 text-amber-400 shadow-lg hover:bg-slate-900"
             aria-label="Scroll certifications right"
           >
             ›
@@ -79,7 +79,7 @@ function CertCard({ cert }) {
       {...wrapperProps}
       data-card
       className="snap-start flex-shrink-0 w-[260px] sm:w-[300px]
-                 rounded-3xl bg-slate-900/90 text-slate-100 p-6 shadow-xl
+                 rounded-3xl bg-slate-900 text-slate-100 p-6 shadow-xl
                  hover:translate-y-[-2px] transition"
     >
       <div className="flex justify-center">

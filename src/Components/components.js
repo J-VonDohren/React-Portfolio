@@ -16,10 +16,10 @@ export function TimelineItem({ role, company, date, points }) {
   return (
     <div className="relative pl-10">
       {/* Timeline dot */}
-      <span className="absolute -left-[9px] top-2 h-4 w-4 rounded-full bg-amber-400 border-4 border-slate-100"></span>
+      <span className="absolute -left-[9px] top-2 h-4 w-4 rounded-full bg-amber-400 border-4 border-black"></span>
 
       {/* Timeline card */}
-      <div className="rounded-3xl bg-slate-900/90 text-slate-100 p-8 shadow-xl">
+      <div className="rounded-3xl bg-slate-900 text-slate-100 p-8 shadow-xl">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
           <h3 className="text-xl font-bold">
             {role} <span className="text-amber-400">@ {company}</span>
@@ -58,7 +58,7 @@ export function ProjectCard({
   return (
     <div
       className={[
-        "rounded-3xl bg-slate-900/90 text-slate-100 shadow-xl",
+        "rounded-3xl bg-slate-900 text-slate-100 shadow-xl",
         "p-8 flex flex-col",
         isLarge ? "md:p-10" : "",
       ].join(" ")}

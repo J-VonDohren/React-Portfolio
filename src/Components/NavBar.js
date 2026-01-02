@@ -33,7 +33,7 @@ export default function Navbar() {
       {/* NAVBAR */}
       <nav
         ref={navRef}
-        className="fixed top-0 left-0 w-full z-50 bg-slate-900/80 backdrop-blur border-b border-slate-800"
+        className="fixed top-0 left-0 w-full z-50 bg-slate-900 backdrop-blur border-b border-slate-800"
       >
         <div className="mx-auto max-w-6xl px-6 py-3">
           {/* Mobile: stacked layout, Desktop: single row */}

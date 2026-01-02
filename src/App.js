@@ -13,7 +13,7 @@ function App() {
       <Navbar />
       <ResumeAI offsetX={20} offsetY={20} />
 
-      <div className="pt-[var(--nav-h)] h-full text-center bg-slate-900 pb-5">
+      <div className="pt-[var(--nav-h)] h-full text-center bg-white pb-5">
         <section id="NavBar"></section>
 
         {/* Landing Page */}
@@ -97,13 +97,13 @@ function App() {
         </section>
 
         {/* Skills */}
-        <section id="skills" className="scroll-mt-24 bg-[#333333] py-20">
+        <section id="skills" className="scroll-mt-24 bg-white py-20">
           <div className="mx-auto max-w-6xl w-full px-6">
-            <h2 className="text-3xl font-bold text-white mb-10">Skills</h2>
+            <h2 className="text-3xl font-bold text-black mb-10">Skills</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="rounded-3xl bg-slate-900/90 text-white p-8 shadow-xl">
-                <div className="flex items-center gap-4 mb-6">
+              <div className="rounded-3xl bg-slate-900 text-white p-8 shadow-xl">
+                <div className="flex items-center gap-4 mb-6 ">
                   <h3 className="text-2xl font-bold">Software Engineering</h3>
                 </div>
 
@@ -118,7 +118,7 @@ function App() {
                 </div>
               </div>
 
-              <div className="rounded-3xl bg-slate-900/90 text-white p-8 shadow-xl">
+              <div className="rounded-3xl bg-slate-900 text-white p-8 shadow-xl">
                 <div className="flex items-center gap-4 mb-6">
                   <h3 className="text-2xl font-bold">Cloud & DevOps</h3>
                 </div>
@@ -134,7 +134,7 @@ function App() {
                 </div>
               </div>
 
-              <div className="rounded-3xl bg-slate-900/90 text-white p-8 shadow-xl">
+              <div className="rounded-3xl bg-slate-900 text-white p-8 shadow-xl">
                 <div className="flex items-center gap-4 mb-6">
                   <h3 className="text-2xl font-bold">Data Science & Analytics</h3>
                 </div>
@@ -151,7 +151,7 @@ function App() {
                 </div>
               </div>
 
-              <div className="rounded-3xl bg-slate-900/90 text-white p-8 shadow-xl">
+              <div className="rounded-3xl bg-slate-900 text-white p-8 shadow-xl">
                 <div className="flex items-center gap-4 mb-6">
                   <h3 className="text-2xl font-bold">
                     Infrastructure, Networking & Security
@@ -174,9 +174,9 @@ function App() {
         </section>
 
         {/* Projects */}
-        <section id="projects" className="scroll-mt-24 bg-[#333333] py-20">
+        <section id="projects" className="scroll-mt-24 bg-white py-20">
           <div className="mx-auto max-w-6xl px-6">
-            <h2 className="text-3xl font-bold text-white mb-12">Featured Projects</h2>
+            <h2 className="text-3xl font-bold text-black mb-12">Featured Projects</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               <div className="md:col-span-2">
@@ -225,11 +225,11 @@ function App() {
         </section>
 
         {/* Experience */}
-        <section id="experience" className="scroll-mt-24 bg-[#333333] py-20">
+        <section id="experience" className="scroll-mt-24 bg-white py-20">
           <div className="mx-auto max-w-6xl px-6">
-            <h2 className="text-3xl font-bold text-white mb-12">Experience</h2>
+            <h2 className="text-3xl font-bold text-black mb-12">Experience</h2>
 
-            <div className="relative border-l border-slate-300 ml-4 space-y-12">
+            <div className="relative border-l border-black ml-4 space-y-12">
               <TimelineItem
                 role="Team Leader"
                 company="Domino’s"
@@ -245,11 +245,11 @@ function App() {
         </section>
 
         {/* Education */}
-        <section id="education" className="scroll-mt-24 bg-[#333333] py-20">
+        <section id="education" className="scroll-mt-24 bg-white py-20">
           <div className="mx-auto max-w-6xl px-6">
-            <h2 className="text-3xl font-bold text-white mb-12">Education Timeline</h2>
+            <h2 className="text-3xl font-bold text-black mb-12">Education</h2>
 
-            <div className="relative border-l border-slate-300 ml-4 space-y-12">
+            <div className="relative border-l border-black ml-4 space-y-12">
               <TimelineItem
                 role="Bachelor of IT / Master of Data Science"
                 company="Queensland University of Technology"
@@ -276,9 +276,9 @@ function App() {
         </section>
 
         {/* Certifications */}
-        <section id="certifications" className="scroll-mt-24 bg-[#333333] py-20">
+        <section id="certifications" className="scroll-mt-24 bg-white py-20">
           <div className="mx-auto max-w-7xl px-6">
-            <h2 className="text-3xl font-bold text-white mb-10">Certifications</h2>
+            <h2 className="text-3xl font-bold text-black mb-10">Certifications</h2>
 
             <CertificationsCarousel
               items={[
