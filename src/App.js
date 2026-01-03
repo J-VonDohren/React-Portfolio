@@ -13,14 +13,14 @@ function App() {
       <Navbar />
       <ResumeAI offsetX={20} offsetY={20} />
 
-      <div className="pt-[var(--nav-h)] h-full text-center bg-white pb-5">
+      <div  className="h-full text-center bg-white pb-5"
+            style={{ paddingTop: "var(--nav-h)" }}>
         <section id="NavBar"></section>
 
         {/* Landing Page */}
         <section
           id="landingPage"
-          className="scroll-mt-24 bg-slate-900 text-amber-400
-                    pt-[150px] sm:pt-[140px] md:pt-[88px]"
+          className="scroll-mt-24 min-h-[calc(100dvh-var(--nav-h))] bg-slate-900 text-amber-400"
         >
           <div
             className="mx-auto max-w-6xl w-full px-8
@@ -78,7 +78,7 @@ function App() {
             </div>
 
             {/* RIGHT (mobile top): portrait + KPIs */}
-            <div className="flex-1 w-full flex flex-col items-center">
+            <div className="py-5 flex-1 w-full flex flex-col items-center">
               <div className="flex justify-center">
                 <img
                   src={`${publicUrl}/Img/Self-Portrait.jpg`}
