@@ -29,10 +29,10 @@ export function TimelineItem({ role, company, date, points }) {
           </span>
         </div>
 
-        <ul className="space-y-3 text-slate-300">
+        <ul className="text-left space-y-3 text-slate-300">
           {points.map((point, i) => (
             <li key={i} className="flex gap-3">
-              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-amber-400 flex-shrink-0"></span>
+              <span className="text-left mt-2 h-1.5 w-1.5 rounded-full bg-amber-400 flex-shrink-0"></span>
               <span>{point}</span>
             </li>
           ))}
@@ -79,8 +79,8 @@ export function ProjectCard({
           <ul className="space-y-3">
             {highlights.map((point, i) => (
               <li key={i} className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-amber-400 flex-shrink-0" />
-                <span className="text-slate-300">{point}</span>
+                <span className="text-left mt-2 h-1.5 w-1.5 rounded-full bg-amber-400 flex-shrink-0" />
+                <span className="text-left text-slate-300">{point}</span>
               </li>
             ))}
           </ul>
