@@ -19,11 +19,16 @@ function App() {
         {/* Landing Page */}
         <section
           id="landingPage"
-          className="scroll-mt-24 min-h-screen bg-slate-900 text-amber-400"
+          className="scroll-mt-24 bg-slate-900 text-amber-400
+                    pt-[150px] sm:pt-[140px] md:pt-[88px]"
         >
-          <div className="mx-auto max-w-6xl w-full px-8 min-h-screen flex flex-col md:flex-row items-center">
+          <div
+            className="mx-auto max-w-6xl w-full px-8
+                      min-h-[calc(100dvh-150px)] sm:min-h-[calc(100dvh-140px)] md:min-h-[calc(100dvh-88px)]
+                      flex flex-col-reverse md:flex-row items-center gap-10"
+          >
             {/* LEFT: about me */}
-            <div className="flex-1 space-y-6 py-12 md:py-0">
+            <div className="flex-1 space-y-6 py-8 md:py-0">
               <h1 className="font-bold text-left text-2xl text-slate-200">
                 Hello I'm Jake
               </h1>
@@ -72,17 +77,17 @@ function App() {
               </a>
             </div>
 
-            {/* RIGHT: portrait + KPIs */}
-            <div className="flex-1 w-full flex flex-col items-center min-h-[400px]">
+            {/* RIGHT (mobile top): portrait + KPIs */}
+            <div className="flex-1 w-full flex flex-col items-center">
               <div className="flex justify-center">
                 <img
                   src={`${publicUrl}/Img/Self-Portrait.jpg`}
                   alt="Portrait"
-                  className="w-64 h-65 object-cover rounded-full border-2 border-amber-400"
+                  className="w-64 h-64 object-cover rounded-full border-2 border-amber-400"
                 />
               </div>
 
-              <div className="mt-auto pt-10 flex gap-10">
+              <div className="pt-8 flex gap-10">
                 <div className="text-center">
                   <h2 className="text-2xl font-bold text-slate-200">5+</h2>
                   <p className="font-bold text-sm text-slate-300">projects</p>
@@ -95,6 +100,7 @@ function App() {
             </div>
           </div>
         </section>
+
 
         {/* Skills */}
         <section id="skills" className="scroll-mt-24 bg-white py-20">
